@@ -1,0 +1,62 @@
+---
+description: Object storage pricing (May 27th 2022)
+data:
+  values:
+  - vendor: AWS
+    label: AWS S3 Standard
+    SLA: 99.9
+    cost: 0.023
+  - vendor: AWS
+    label: AWS S3 One Zone Infreq. Acc.
+    SLA: 99
+    cost: 0.01
+  - vendor: Wasabi
+    label: Wasabi Hot
+    SLA: 99.9
+    cost: 0.0059
+  - vendor: Google Cloud
+    label: Google Standard Storage
+    SLA: 99.99
+    cost: 0.023
+  - vendor: Microsoft Azure
+    label: Azure Hot Blob Storage
+    SLA: 99.9
+    cost: 0.018
+  - vendor: Microsoft Azure
+    label: Azure Premium Blob Storage
+    SLA: 99.9
+    cost: 0.15
+  - vendor: Scaleway
+    label: Scaleway Standard
+    SLA: 99.99
+    cost: 0.013
+mark:
+  type: point
+  size: 750
+  filled: true
+encoding:
+  x:
+    field: cost
+    type: quantitative
+    scale:
+      domain:
+      - 0
+      - 0.15
+      type: sqrt
+    title: Cost ($) per GB per month
+  y:
+    field: SLA
+    type: quantitative
+    scale:
+      domain:
+      - 99
+      - 100
+    title: Availability SLA
+  color:
+    field: vendor
+    type: nominal
+  shape:
+    field: label
+    type: nominal
+width: 512
+height: 256
