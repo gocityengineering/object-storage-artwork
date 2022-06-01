@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
   Z(( ))
   M[/Metrics/]
@@ -24,3 +25,4 @@ flowchart TD
   F -->|pull|Q
   G -->|data source Thanos|Q
   P -->|scrape|M
+```
